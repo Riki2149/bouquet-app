@@ -1,5 +1,8 @@
 import { userModel } from "../Models/User.js";
 
+const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 // פונקציית קבלת כל המשתמשים
 export const getAllUsers = async (req, res) => {
     try {
@@ -16,13 +19,15 @@ export const getAllUsers = async (req, res) => {
 
 // פונקציית הוספת משתמש
 export const addUser = async (req, res) => {
-    let { userName, password } = req.body;
+    let { userName, password, email } = req.body;
     // בדיקת מילוי שדות חובה
     if (!userName || !password)
         return res.status(404).json({ title: "Missing required details", message: "userName  and passward are required fileds" })
     // בדיקת ערכים תקינים
-    if (password < 8 || userName.length < 2)
-        return res.status(404).json({ title: "Incorrect details ", message: "The userName has to contain at least 2 letters and the passward has to contain at least 8 character" })
+    if ((email && !emailRegex.test(email)) || !strongPasswordRegex.test(password) || userName.length < 2)
+        return res.status(404).json({ title: "Incorrect details ", message: "The username must contain at least 2 letters, the password must be strong, and the email must be in the correct format." })
+
+
     try {
         let user = new userModel(req.body)
         await user.save()
@@ -41,7 +46,6 @@ export const addUser = async (req, res) => {
 export const getUserById = async (req, res) => {
     let { id } = req.params;
     try {
-        F
         // שליפת הנתונים ללא הסיסמא של המשתמש
         let data = await userModel.findById(id, "-password");
         //    בדיקה אם קיים משתמש עם כזה קוד
@@ -63,8 +67,8 @@ export const updateUserById = async (req, res) => {
     if (password)
         return res.status(404).json({ title: "Incorrect detail", message: "It is not possible to change the password in this operation " })
     // בדיקת ערכים תקינים
-    if (details.userName && details.userName.length < 2)
-        return res.status(404).json({ title: "Incorrect details", message: "The userName has to contain at least 2 letters" })
+    if ((details.userName && details.userName.length < 2) || (details.email && !details.emailRegex.test(email)))
+        return res.status(404).json({ title: "Incorrect details", message: "he username must contain at least 2 letters and the email must be in the correct format" })
     try {
         // שליפת הנתונים ללא הסיסמא של המשתמש
         let data = await userModel.findByIdAndUpdate(id, details, { new: true, fields: "-password" },);
@@ -84,8 +88,8 @@ export const updatePasswordById = async (req, res) => {
     let { id } = req.params;
     let { password } = req.body;
     // בדיקת ערכים תקינים
-    if (password && password < 8)
-        return res.status(404).json({ title: "Incorrect detail ", message: "The passward has to contain at least 8 character" })
+    if (password && !strongPasswordRegex.test(password))
+        return res.status(404).json({ title: "Incorrect detail ", message: "The passward must be strong" })
     try {
         // שליפת הנתונים ללא הסיסמא של המשתמש
         let data = await userModel.findByIdAndUpdate(id, req.body, { new: true, fields: "-password" });
@@ -104,11 +108,15 @@ export const updatePasswordById = async (req, res) => {
 export const getUserByNameAndPassword = async (req, res) => {
     let { userName, password } = req.body;
     try {
-        // שליפת הנתונים ללא הסיסמא של המשתמש
-        let data = await userModel.findOne({ userName: userName, password: password }, "-password");
+        let data = await userModel.findOne({ userName: userName });
+        // בדיקה אם קיים משתמש אם שם כזה
         if (!data)
-            return res.status(404).json({ title: "Error: cannot get user by name and password", message: "There is no user with such a name and password" });
-        res.json(data);
+            return res.status(404).json({ title: "Error: cannot get user", message: "There is no user with such a name" });
+        // בדיקה אם הסיסמא זהה  
+            if (data.password != password)
+            return res.status(401).json({ title: "Error: cannot get user by name and password", message: "There is no user with such a name and password" });
+        let {password,...details} = data
+        res.json(details);
     }
     // החזרת שגיאה עקב חוסר יכולת למלא את הבקשה
     catch (err) {

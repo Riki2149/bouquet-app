@@ -2,13 +2,29 @@ import {flowerModel} from "../Models/Flower.js";
 
 // פונקציית קבלת כל הפרחים
 export const getAllFlowers = async (req, res) => {
+    let limit = req.query.limit || 2;
+    let page = req.query.page || 1;
     try {
-        let data = await flowerModel.find();
+        let data = await flowerModel.find().skip((page-1)*limit).limit(limit);
         res.json(data);
     }
     catch (err) {
         return res.status(400).json({ title: "Error: cannot get all flowers", message: err.message })
+    }
+}
 
+export const getCountOfPages= async(req,res)=>{
+    let limit = req.query.limit|| 2;
+    try{
+        let result = await flowerModel.countDocuments();
+        res.json({
+            countOfFloewr:result,
+            countOfPages: Math.ceil(result/limit),
+            limit:limit
+        })
+    }
+    catch (err) {
+        return res.status(400).json({ title: "Error: cannot get countDocuments of flowers", message: err.message })
     }
 }
 
