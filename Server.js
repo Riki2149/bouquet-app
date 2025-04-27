@@ -7,7 +7,6 @@ import cors from "cors";
 import {config} from "dotenv"
 
 
-
 config()
 // הפעלת פונקציית ההתחברות למונגו אטלס
 connectToDB()
@@ -15,12 +14,13 @@ connectToDB()
 // שימוש בספריית express 
 const app = express();
 app.use(express.json());
+app.use(express.static('static/images'));
 app.use(cors()); 
 
 // הפנייה ל-routers
-app.use("/flowers",flowerRouter)
-app.use("/users",userRouter)
-app.use("/orders",orderRouter)
+app.use("/api/flowers",flowerRouter)
+app.use("/api/users",userRouter)
+app.use("/api/orders",orderRouter)
 
 // הפעלת השרת
 let port = process.env.PORT

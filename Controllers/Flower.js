@@ -2,7 +2,7 @@ import {flowerModel} from "../Models/Flower.js";
 
 // פונקציית קבלת כל הפרחים
 export const getAllFlowers = async (req, res) => {
-    let limit = req.query.limit || 2;
+    let limit = req.query.limit || 4;
     let page = req.query.page || 1;
     try {
         let data = await flowerModel.find().skip((page-1)*limit).limit(limit);
@@ -13,8 +13,9 @@ export const getAllFlowers = async (req, res) => {
     }
 }
 
+// פונקציית קבלת מספר הפרחים ומספר העמודים
 export const getCountOfPages= async(req,res)=>{
-    let limit = req.query.limit|| 2;
+    let limit = req.query.limit|| 4;
     try{
         let result = await flowerModel.countDocuments();
         res.json({
@@ -88,7 +89,7 @@ export const updateFlowerById = async (req, res) => {
     if (name && name.length < 2 || flowerContain && flowerContain.length == 0 || price && price < 100)
         return res.status(404).json({ title: "Incorrect details ", message: "The price has to be over 100 and the name has to contain at least 2 letters" })
     try {
-        let dataF = await flowerModel.findByIdAndUpdate(id, req.body, { new: true });
+        let data= await flowerModel.findByIdAndUpdate(id, req.body, { new: true });
           //    בדיקה אם קיים פרח עם כזה קוד
         if (!data)
             return res.status(404).json({ title: "Error: cannot update a flower", message: "no such id was found to be update" })
