@@ -71,7 +71,7 @@ This project is an e-commerce website for purchasing flower bouquets, built with
    ```sh
    npm install
    ```
-4. Run the development server:
+4. Run the development client:
   ```sh
   npm run dev 
   ```
