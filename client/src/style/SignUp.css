@@ -1,0 +1,54 @@
+/* SignUp.css */
+
+/* עיצוב הכללי של הקומפוננטה */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 16px 32px;
+  }
+  
+  /* עיצוב הפייפר */
+  .signup-paper {
+    padding: 24px 32px;
+    width: 90%;
+  }
+  
+  /* כותרת */
+  .signup-title {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  /* הודעת שגיאה */
+  .signup-message {
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  /* עיצוב השדות */
+  .signup-field {
+    margin-bottom: 24px;
+  }
+  
+  /* כפתור ההרשמה */
+  .signup-button {
+    margin-top: 16px;
+    padding: 12px 0;
+  }
+  
+  /* עיצוב הטקסט של הלינק למעבר לדף ההתחברות */
+  .signup-switch-text {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  /* עיצוב הכפתור של הלינק */
+  .signup-switch-button {
+    margin-left: 8px;
+    text-transform: none;
+    padding: 0;
+  }
+  

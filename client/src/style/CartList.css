@@ -1,0 +1,90 @@
+/* עיצוב הכללי של הקומפוננטה */
+.cart-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 16px;
+  }
+  
+  .cart-list-paper {
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff9fb;
+  }
+  
+  .cart-list-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .cart-list-header-icon {
+    color: #d81b60;
+    margin-right: 16px;
+    font-size: 30px;
+  }
+  
+  .cart-list-title {
+    color: #d81b60;
+    font-weight: bold;
+  }
+  
+  .cart-list-empty {
+    text-align: center;
+    padding: 40px 0;
+  }
+  
+  .cart-list-empty-message {
+    margin-bottom: 16px;
+    color: #6b6b6b;
+  }
+  
+  .cart-list-empty-button {
+    background-color: #1e1e1e;
+    &:hover {
+      background-color: #d81b60;
+    }
+  }
+  
+  .cart-list-table-container {
+    margin-bottom: 24px;
+    box-shadow: none;
+    border: 1px solid #f8bbd0;
+  }
+  
+  .title {
+    background-color: rgb(15, 11, 11);
+    color: white !important; /* הוספתי את !important כדי לוודא שזה ישפיע */
+  }
+  
+  .cart-list-divider {
+    margin: 24px 0;
+    border-color: #1e1e1e;
+  }
+  
+  .cart-list-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  
+  .cart-list-total-price {
+    font-weight: bold;
+    color: #d81b60;
+  }
+  
+  .cart-list-checkout {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .cart-list-checkout-button {
+    background-color: #e91e63 !important;
+    &:hover {
+      background-color:black !important;
+    }
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  

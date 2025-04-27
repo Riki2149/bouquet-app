@@ -1,0 +1,66 @@
+.flower-cart-row:hover {
+    background-color: #fff9fb !important;
+  }
+  
+  .flower-cart-cell {
+    border-bottom: 1px solid #f8bbd0 !important;
+  }
+  
+  .flower-cart-product {
+    display: flex;
+    align-items: center;
+  }
+  
+  .flower-cart-avatar {
+    width: 80px;
+    height: 80px;
+    margin-right: 8px;
+    border-radius: 2px;
+  }
+  
+  .flower-cart-name {
+    color: #d81b60;
+    margin-bottom: 4px;
+  }
+  
+  .flower-cart-price {
+    font-weight: 500;
+  }
+  
+  .flower-cart-quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .flower-cart-quantity-button {
+    color: #e91e63 !important;
+    border: 1px solid #f8bbd0;
+    border-radius: 4px;
+    padding: 4px;
+  }
+  
+  .flower-cart-quantity-button:hover {
+    background-color: #fce4ec;
+  }
+  
+  .flower-cart-quantity-text {
+    margin: 0 8px;
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+  }
+  
+  .flower-cart-total {
+    font-weight: bold !important;
+    color: #ad1457 !important;
+  }
+  
+  .flower-cart-remove-button {
+    color: #e91e63 !important;
+  }
+  
+  .flower-cart-remove-button:hover {
+    background-color: #fce4ec;
+  }
+  

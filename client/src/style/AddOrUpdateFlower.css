@@ -1,0 +1,52 @@
+.container {
+    max-width: 800px !important;
+    margin: auto !important;
+    padding: 20px !important;
+}
+  
+.paper {
+    padding: 30px !important;
+    border-radius: 8px !important;
+    background-color: #fff9fb !important;
+}
+  
+.paper .title {
+    background: #fff9fb;
+    color: #d81b60 !important;
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
+  
+}
+  
+.subTitle {
+    margin-bottom: 10px !important;
+    color: #ad1457 !important;
+}
+  
+.input {
+    margin-bottom: 16px !important;
+}
+  
+.flowerItem {
+    margin-bottom: 16px !important;
+}
+  
+.addButton {
+    color: #d81b60 !important;
+    &:hover {
+      background-color: #fce4ec !important;
+    }
+}
+  
+.saveButton {
+    background-color: #e91e63 !important;
+    color: white !important;
+    &:hover {
+      background-color: black !important;
+    }
+}
+  
+.alert {
+    margin-top: 20px !important;
+    border-radius: 8px !important;
+}

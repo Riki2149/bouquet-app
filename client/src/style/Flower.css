@@ -1,0 +1,251 @@
+.flower-item {
+  background-color: transparent;
+  transition: all 0.3s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flower-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.flower-name {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.flower-price {
+  font-size: 16px;
+  color: #d6336c;
+  font-weight: 700;
+}
+
+.flower-image-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flower-image-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.flower-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.flower-hover-info {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.flower-hover-info.visible,
+.flower-image-wrapper:hover .flower-hover-info {
+  opacity: 1;
+}
+
+.flower-hover-info span {
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: rgba(214, 51, 108, 0.8);
+}
+
+.flower-bottom-section {
+  padding: 12px 0;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.flower-contains {
+  flex: 1;
+  padding-right: 8px;
+}
+
+.flower-contains-title {
+  display: block;
+  font-size: 12px;
+  color: #d6336c;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.flower-contains-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.flower-contain-item {
+  /* background-color: #121212; */
+  width: 60%;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: #ff1493;
+  border: 1px solid rgba(255, 20, 147, 0.2);
+}
+
+.flower-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: auto;
+}
+
+.add-to-cart-btn-new,
+.delete-flower-btn-new,
+.update-flower-btn-new {
+  background-color: #121212;
+  border: 2px solid rgba(214, 51, 108, 0.5);
+  border-radius: 6px;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-actions-new {
+  display: flex;
+  gap: 8px;
+}
+
+.add-to-cart-btn-new:hover,
+.delete-flower-btn-new:hover,
+.update-flower-btn-new:hover {
+  background-color: rgba(214, 51, 108, 0.1);
+  border-color: #d6336c;
+}
+
+.cart-icon,
+.delete-icon,
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  stroke: #ff1493;
+  transition: transform 0.3s ease;
+}
+
+.add-to-cart-btn-new:hover .cart-icon,
+.delete-flower-btn-new:hover .delete-icon,
+.update-flower-btn-new:hover .edit-icon {
+  transform: scale(1.1);
+}
+
+.error-message {
+  color: #f03e3e;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+.delete-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.delete-confirmation-modal {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-confirmation-modal h3 {
+  color: #d6336c;
+  margin-bottom: 10px;
+}
+
+.delete-confirmation-modal p {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.delete-confirmation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.confirm-delete-btn, .cancel-delete-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirm-delete-btn {
+  background-color: #d6336c;
+  color: white;
+}
+
+.confirm-delete-btn:hover {
+  background-color: #a8274f;
+}
+
+.cancel-delete-btn {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.cancel-delete-btn:hover {
+  background-color: #dee2e6;
+}
+@media (max-width: 480px) {
+  .flower-bottom-section {
+    flex-direction: column;
+  }
+  
+  .flower-contains {
+    margin-bottom: 12px;
+    padding-right: 0;
+  }
+  
+  .flower-actions {
+    width: 100%;
+    justify-content: center;
+  }
+}

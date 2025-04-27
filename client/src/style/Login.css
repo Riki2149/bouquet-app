@@ -1,0 +1,51 @@
+/* Login.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 16px;
+}
+
+@media (min-width: 600px) {
+    .login-container {
+        padding: 40px;
+    }
+}
+
+.login-paper {
+    padding: 24px 32px;
+    width: 90%;
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.login-message {
+    color: red;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.login-textfield {
+    margin-bottom: 16px;
+}
+
+.login-button {
+    margin-top: 16px;
+    padding: 12px 0;
+}
+
+.login-footer {
+    margin-top: 16px;
+    text-align: center;
+}
+
+.create-account-button {
+    margin-left: 8px;
+    text-transform: none;
+    padding: 0;
+}
