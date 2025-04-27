@@ -1,0 +1,161 @@
+.flower-big-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 30px 20px;
+}
+
+.flower-big-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.back-button {
+    background-color: transparent;
+    border: none;
+    color: #f06595;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 20px;
+    display: inline-block;
+    transition: color 0.2s;
+}
+
+.back-button:hover {
+    color: #d6336c;
+}
+
+.flower-big-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.flower-big-image-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.flower-big-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flower-big-details {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.flower-big-name {
+    font-size: 28px;
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+.flower-big-price-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.flower-big-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d6336c;
+    margin-right: 20px;
+}
+
+.flower-big-add-btn {
+    background-color: #f783ac;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.flower-big-add-btn:hover {
+    background-color: #f06595;
+}
+
+.flower-big-add-btn.adding {
+    background-color: #e64980;
+}
+
+.flower-big-description,
+.flower-big-contains {
+    margin-bottom: 25px;
+}
+
+.flower-big-description h3,
+.flower-big-contains h3 {
+    font-size: 18px;
+    margin: 0 0 12px 0;
+    color: #495057;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #fcc2d7;
+}
+
+.flower-big-description p {
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+.flower-contains-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.flower-contains-item {
+    background-color: #f9f0f2;
+    border: 1px solid #fcc2d7;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+    color: #d6336c;
+}
+
+.continue-shopping-btn {
+    margin-top: auto;
+    background-color: #1e1e1e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.continue-shopping-btn:hover {
+    background-color: #f06595;
+}
+
+@media (max-width: 768px) {
+    .flower-big-content {
+        grid-template-columns: 1fr;
+    }
+
+    .flower-big-image-container {
+        height: 300px;
+    }
+}

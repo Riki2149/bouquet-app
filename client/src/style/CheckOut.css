@@ -1,0 +1,75 @@
+/* CheckOut.css */
+
+.pink-button {
+    background-color: #e91e63;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 16px;
+}
+
+.pink-button:hover {
+    background-color: #c2185b;
+}
+
+.pink-textfield .Mui-focused {
+    color: #e91e63 !important;
+}
+
+.pink-textfield .MuiOutlinedInput-root.Mui-focused fieldset {
+    border-color: #e91e63 !important;
+}
+
+.order-summary {
+    margin-bottom: 2rem;
+    color: #ad1457 !important;
+}
+
+.cart-item {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: #fce4ec;
+    border-radius: 1rem;
+}
+
+.cart-item-grid {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.continue-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 3rem;
+}
+
+.shipping-info {
+    margin-bottom: 2rem;
+    color: #ad1457 !important;
+}
+
+.shipping-text {
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    color: black !important;
+}
+
+.shipping-text .MuiSvgIcon-root {
+    margin-right: 8px;
+}
+
+.confirmation-text {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.confirmation-button {
+    margin-top: 2rem;
+}

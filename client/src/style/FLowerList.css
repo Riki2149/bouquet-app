@@ -1,0 +1,73 @@
+/* FlowerList.css */
+
+/* עיצוב הכללי של עמוד המוצרים */
+.flower-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.flower-list-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #d6336c;
+  text-align: center;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.flowers-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.flower-item-wrapper {
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.flower-item-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.custom-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 15px;
+}
+
+.pagination-arrow {
+  color: #d6336c;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.pagination-arrow:hover {
+  color: #f783ac;
+  border-bottom: 1px solid #f783ac;
+}
+
+.pagination-arrow.disabled {
+  color: #adb5bd;
+  cursor: not-allowed;
+  border-bottom: 1px solid transparent;
+}
+
+.current-page-display {
+  color: #d6336c;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.left-arrow, .right-arrow {
+  user-select: none;
+}
