@@ -56,13 +56,13 @@ This project is an e-commerce website for purchasing flower bouquets, built with
 1. Clone the repository.
 2. Navigate to the `server` folder.
 3. Install dependencies:
-  ```sh
-   npm install
+   ```sh
+    npm install
    ```
 4. Run the development server:
-  ```sh
-  npm run dev
-  ```
+   ```sh
+    npm run dev
+   ```
   
 ### Frontend
 1. Clone the repository.
@@ -72,9 +72,9 @@ This project is an e-commerce website for purchasing flower bouquets, built with
    npm install
    ```
 4. Run the development client:
-  ```sh
-  npm run dev 
-  ```
+   ```sh
+   npm run dev 
+   ```
 
 
 
